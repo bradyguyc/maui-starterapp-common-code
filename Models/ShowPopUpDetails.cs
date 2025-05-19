@@ -8,7 +8,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
 
-namespace StarterApp.Models
+namespace CommonCode.Models
 {
     public partial class ShowPopUpDetails : ObservableObject
     {

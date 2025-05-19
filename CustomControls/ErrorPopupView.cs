@@ -7,8 +7,8 @@ using DevExpress.Maui.Core;
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Controls;
 
-using StarterApp.Common.Helpers;
-using StarterApp.Common.Models;
+using CommonCode.Helpers;
+using CommonCode.Models;
 
 using System;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StarterApp.CustomControls
+namespace CustomCode.CustomControls
 {
     public partial class ErrorPopupView : ContentView, INotifyPropertyChanged
     {
@@ -76,7 +76,7 @@ namespace StarterApp.CustomControls
         }
 
         public string ErrorType { get; set; }
-        public string ExpanderIcon { get; set; } = IconCodesMIR.Expand_more;
+        public string ExpanderIcon { get; set; } = CommonCode.Helpers.IconCodesMIR.Expand_more;
         public string HelpLink
         {
             get => (string)GetValue(HelpLinkProperty);

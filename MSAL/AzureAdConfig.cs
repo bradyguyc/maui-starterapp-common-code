@@ -1,7 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-namespace StarterApp.MSALClient
+namespace CommonCode.MSALClient
 {
     /// <summary>
     /// App settings, populated from appsettings.json file

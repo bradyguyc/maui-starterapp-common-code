@@ -10,7 +10,7 @@ using System.Diagnostics;
 //using Microsoft.Identity.Client.Desktop;
 #endif
 
-namespace StarterApp.MSALClient
+namespace CommonCode.MSALClient
 {
     /// <summary>
     /// Contains methods that initialize and use the MSAL SDK

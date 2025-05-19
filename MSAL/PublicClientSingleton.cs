@@ -7,11 +7,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
 using Microsoft.Identity.Client;
 using System.Reflection;
-using StarterApp.MSALClient;
+using CommonCode.MSALClient;
 using System.Runtime.CompilerServices;
 using System.Diagnostics;
 
-namespace StarterApp.MSALClient
+namespace CommonCode.MSALClient
 {
     /// <summary>
     /// This is a singleton implementation to wrap the MSALClient and associated classes to support static initialization model for platforms that need this.

@@ -3,7 +3,7 @@
 
 using System.Runtime.InteropServices;
 
-namespace StarterApp.MSALClient
+namespace CommonCode.MSALClient
 {
     /// <summary>
     /// Contains some handy methods to retrieve a windows handle

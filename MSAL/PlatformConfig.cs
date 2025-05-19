@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StarterApp.MSALClient;
+using CommonCode.MSALClient;
 
-namespace StarterApp.MSALClient
+namespace CommonCode.MSALClient
 {
     /// <summary>
     /// Platform specific configuration.

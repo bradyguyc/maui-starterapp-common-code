@@ -4,7 +4,7 @@
 using Microsoft.IdentityModel.Abstractions;
 using System.Diagnostics;
 
-namespace StarterApp.MSALClient
+namespace CommonCode.MSALClient
 {
     /// <summary>
     /// An example of how to use MSAL.NET logging

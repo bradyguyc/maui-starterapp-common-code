@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StarterApp.Common.Models
+namespace CommonCode.Models
 {
     public class ErrorDetails
     {
