@@ -18,7 +18,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CustomCode.CustomControls
+namespace CommonCode.CustomControls
 {
     public partial class ErrorPopupView : ContentView, INotifyPropertyChanged
     {
@@ -172,7 +172,7 @@ namespace CustomCode.CustomControls
                             control.ShowErrorMessage = true;
                             control.ShowInfo = false;
                             control.TitleContainerColor = ThemeManager.Theme.Scheme.Error;                           
-                            control.TitleOnContainerColor = ThemeManager.Theme.Scheme.OnError;
+                            control.TitleOnContainerColor = Color.Parse("White");
                             break;
 
                         default:
@@ -180,7 +180,7 @@ namespace CustomCode.CustomControls
                             control.ShowErrorMessage = true;
                             control.ShowInfo = false;
                             control.TitleContainerColor = ThemeManager.Theme.Scheme.Error;
-                            control.TitleOnContainerColor = ThemeManager.Theme.Scheme.OnError;
+                            control.TitleOnContainerColor = Color.Parse("White");
 
                             break;
                     }

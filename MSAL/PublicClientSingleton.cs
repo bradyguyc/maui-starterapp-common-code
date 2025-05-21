@@ -56,7 +56,7 @@ namespace CommonCode.MSALClient
             try
             {
                 var assembly = Assembly.GetExecutingAssembly();
-                using var stream = assembly.GetManifestResourceStream("StarterApp.appsettings.json");
+                using var stream = assembly.GetManifestResourceStream("MyNextBook.appsettings.json");
                 AppConfiguration = new ConfigurationBuilder()
                     .AddJsonStream(stream)
                     .Build();

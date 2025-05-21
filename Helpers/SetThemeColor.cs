@@ -3,57 +3,45 @@ using DevExpress.Maui.Core;
 
 namespace CommonCode.Helpers
 {
-     public  static class SetThemeColor
+    public static class SetThemeColor
     {
-         public static void SetAppThemeColor()
+        public static void SetAppThemeColor()
         {
-            // Define the default theme seed color
-            ThemeSeedColor themeSeedColor = ThemeSeedColor.DeepSeaBlue;
+            // Default theme color
+            Theme defaultTheme = new Theme(Color.Parse("#FF323943"));
 
-            // Check if a custom color theme is enabled
+            // Retrieve preferences
             bool isCustomColorTheme = Preferences.Default.Get("isCustomColorTheme", false);
+            string customColor = Preferences.Default.Get("CustomColorTheme", "");
+            string themeColor = Preferences.Default.Get("themeColor", "");
 
-            // Get the custom color or theme color from preferences
-            string customColor = Preferences.Default.Get("CustomColorTheme", "#FF006C50");
-            string themeColor = Preferences.Default.Get("themeColor", themeSeedColor.ToString());
+            Theme theme = defaultTheme;
 
-            // Determine the theme color
-            Theme theme;
-
-            if (isCustomColorTheme || themeColor == "Custom")
+            if (isCustomColorTheme)
             {
-                // Attempt to parse the custom color string to a Color object
-                if (Color.TryParse(customColor, out Color parsedColor))
+                // Attempt to use the custom color
+                if (Color.TryParse(customColor, out Color parsedCustomColor))
                 {
-                    theme = new Theme(parsedColor);
+                    theme = new Theme(parsedCustomColor);
                 }
-                else
+                else if (Enum.TryParse(themeColor, out ThemeSeedColor parsedThemeSeedColor))
                 {
-                    // Fallback to the default theme seed color if parsing fails
-                    themeSeedColor = ThemeSeedColor.TealGreen;
-                    theme = new Theme(themeSeedColor);
+                    theme = new Theme(parsedThemeSeedColor);
                 }
             }
             else
             {
-                // Attempt to parse the theme color string to a ThemeSeedColor enum
+                // Attempt to use the saved theme color
                 if (Enum.TryParse(themeColor, out ThemeSeedColor parsedThemeSeedColor))
                 {
-                    themeSeedColor = parsedThemeSeedColor;
-                    theme = new Theme(themeSeedColor);
+                    theme = new Theme(parsedThemeSeedColor);
                 }
-                else
-                {
-                    // Fallback to the default theme seed color if parsing fails
-                    themeSeedColor = ThemeSeedColor.TealGreen;
-                    theme = new Theme(themeSeedColor);
-                    // Save the default value back to preferences
-                    Preferences.Default.Set("themeColor", themeSeedColor.ToString());
-                }
+            
             }
 
-            // Set the theme manager's theme
+            // Apply the theme
             ThemeManager.UseAndroidSystemColor = false;
+            ThemeManager.ApplyThemeToSystemBars = true;
             ThemeManager.Theme = theme;
         }
     }
