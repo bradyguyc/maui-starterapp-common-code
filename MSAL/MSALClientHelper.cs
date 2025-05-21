@@ -220,6 +220,8 @@ namespace CommonCode.MSALClient
                 {
 
                     Debug.WriteLine($"interactive signin:{ex.Message}");
+                    throw new Exception($"{ex.Message} : {ex.ToString()}");
+
                 }
             }
             throw new MsalUiRequiredException("User interaction required", "User interaction is required to acquire a token. Please use the system browser or device code flow.");

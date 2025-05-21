@@ -25,16 +25,13 @@ namespace CommonCode.Models
         public string Type;
     }
 
-    static public class ErrorDictionary
+    public static class ErrorDictionary
     {
-        static ErrorDictionary()
-        {
-            
-        }
+       
 
         static public List<ErrorDetails> Errors { get; set; }
 
-        static public async Task<bool> LoadErrorsFromFile()
+        public static async Task<bool> LoadErrorsFromFile()
         {
             try
             {
@@ -50,13 +47,9 @@ namespace CommonCode.Models
             }
         }
 
-        static public ErrorDetails GetErrorDetails(string errorCode)
+        public static ErrorDetails GetErrorDetails(string errorCode)
         {
-            if (Errors == null)
-            {
-                LoadErrorsFromFile();
-                
-            }
+          
             ErrorDetails error = null;
             if (string.IsNullOrWhiteSpace(errorCode))
             {

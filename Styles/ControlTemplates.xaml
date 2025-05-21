@@ -19,7 +19,7 @@
         TrueObject="{dx:ThemeColor OnSecondaryContainer}" />
 
 
-    <ControlTemplate x:Key="ErrorPopupStandard" x:DataType="customControls:ErrorPopupView">
+    <ControlTemplate x:Key="ErrorPopupStandard" >
         <popup:SfPopup
             x:Name="popupLayout"
             x:DataType="customControls:ErrorPopupView"
